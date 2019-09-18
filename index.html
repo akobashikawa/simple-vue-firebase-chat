@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Simple Firebase Chat</title>
+    <title>Simple Chat</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
@@ -22,12 +22,58 @@
 <body>
     <div id="app" v-cloak>
         <v-app>
-            <h1>Simple Firebase Chat</h1>
-            <p>
-                <router-link to="/">Home</router-link>
-                <router-link to="/about">About</router-link>
-            </p>
-            <router-view></router-view>
+            <v-navigation-drawer app v-model="drawer">
+                <v-list-item>
+                    <v-list-item-content>
+                        <v-list-item-title class="title">
+                            Simple Chat
+                        </v-list-item-title>
+                        <v-list-item-subtitle>
+                            username
+                        </v-list-item-subtitle>
+                    </v-list-item-content>
+                </v-list-item>
+
+                <v-divider></v-divider>
+
+                <v-list dense nav>
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-view-dashboard</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title to="/">Home</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-view-dashboard</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title to="/about">About</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+
+            </v-navigation-drawer>
+
+            <v-app-bar app color="deep-purple accent-4" dark>
+                <v-app-bar-nav-icon @click.stop="drawer=!drawer"></v-app-bar-nav-icon>
+                <v-toolbar-title>Simple Chat</v-toolbar-title>
+            </v-app-bar>
+
+            <v-content>
+                <v-container fluid>
+                    <router-view></router-view>
+                </v-container>
+            </v-content>
+
+            <v-footer app>
+                <p>
+                    <router-link to="/">Home</router-link>
+                    <router-link to="/about">About</router-link>
+                </p>
+            </v-footer>
         </v-app>
     </div>
 
@@ -90,7 +136,7 @@
             vuetify: new Vuetify(),
             data() {
                 return {
-
+                    drawer: false,
                 };
             },
             methods: {
