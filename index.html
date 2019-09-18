@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Firebase Chat</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <style>
+        [v-cloak]>* {
+            display: none
+        }
+
+        [v-cloak]::before {
+            content: "loading…"
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <v-app>
+            <h1>Simple Firebase Chat</h1>
+            <p>
+                <router-link to="/">Home</router-link>
+                <router-link to="/about">About</router-link>
+            </p>
+            <router-view></router-view>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+
+    <script>
+        var Home = Vue.component('home', {
+            data() {
+                return {
+
+                };
+            },
+            template: `<div>Home</div>`
+        });
+
+        var About = Vue.component('about', {
+            data() {
+                return {
+
+                };
+            },
+            template: `<div>About</div>`
+        });
+
+        var router = new VueRouter({
+            // mode: 'history',
+            routes: [
+                {
+                    path: '/',
+                    name: 'home',
+                    component: Home
+                },
+                {
+                    path: '/about',
+                    name: 'about',
+                    component: About
+                }
+            ]
+        });
+
+        var store = new Vuex.Store({
+            state: {
+
+            },
+            mutations: {
+
+            },
+            actions: {
+
+            }
+        });
+
+        var app = new Vue({
+            router,
+            store,
+            vuetify: new Vuetify(),
+            data() {
+                return {
+
+                };
+            },
+            methods: {
+            }
+        }).$mount('#app');
+    </script>
+</body>
+
+</html>
