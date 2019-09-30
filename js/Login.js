@@ -4,6 +4,11 @@ const Login = Vue.component('login', {
 
         };
     },
+    methods: {
+        login: function () {
+            this.$router.push('/chat');
+        }
+    },
     template: `<div>
                 <v-card>
                     <v-card-title>Login</v-card-title>
@@ -14,7 +19,7 @@ const Login = Vue.component('login', {
                         ></v-text-field>
                     </v-card-text>
                     <v-card-actions>
-                        <v-btn color="primary">Ingresar al chat</v-btn>
+                        <v-btn color="primary" @click="login">Ingresar al chat</v-btn>
                     </v-card-actions>
                 </v-card>
             </div>`
