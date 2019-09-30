@@ -3,11 +3,16 @@ const Login = {
     data() {
         return {
             errorText: null,
+            name: null,
         };
     },
     methods: {
         login: function () {
-            this.$router.push('/chat');
+            if (this.name) {
+                this.$router.push({ name: 'chat', params: { name: this.name } });
+            } else {
+                this.errorText = 'Por favor ingresa tu nombre primero';
+            }
         }
     },
     template: `<div>
@@ -16,25 +21,26 @@ const Login = {
                     
                     <v-card-text>
                         <v-text-field
+                            v-model="name"
                             label="Por favor ingresa tu nombre..."
                             outlined
                         ></v-text-field>
-
-                        <v-card v-if="errorText">
-                            <div class="headline px-2 error white--text">Error</div>
-                            
-                            <v-card-text>{{ errorText }}</v-card-text>
-
-                            <v-card-actions>
-                                <v-btn text color="error">Cerrar</v-btn>
-                            </v-card-actions>
-                        </v-card>
                     </v-card-text>
 
                     <v-card-actions>
                         <v-btn color="primary" @click="login">Ingresar al chat</v-btn>
                     </v-card-actions>
                 </v-card>
+
+                <v-dialog v-model="errorText">
+                    <v-card>
+                        <v-card-text>{{ errorText }}</v-card-text>
+
+                        <v-card-actions>
+                            <v-btn text color="error" @click="errorText = null">Cerrar</v-btn>
+                        </v-card-actions>
+                    </v-card>                
+                </v-dialog>
             </div>`
 };
 
