@@ -10,8 +10,10 @@ const Chat = Vue.component('chat', {
                     <v-card-text>
                         <v-list-item>
                             <v-list-item-content>
-                                <v-list-item-title>Single-line item</v-list-item-title>
-                                <v-list-item-subtitle>Secondary text</v-list-item-subtitle>
+                                <v-list-item-title>
+                                    [username]: Hola 
+                                </v-list-item-title>
+                                <v-list-item-subtitle>12:05:55 AM</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
 
