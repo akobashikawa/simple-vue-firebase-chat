@@ -8,7 +8,11 @@ const Login = Vue.component('login', {
                 <v-card>
                     <v-card-title>Login</v-card-title>
                     <v-card-text>
-                    <p>{{ new Date() }}</p>
+                        <v-text-field
+                            label="Por favor ingresa tu nombre..."
+                            outlined
+                        ></v-text-field>
+                        <v-btn color="primary">Ingresar al chat</v-btn>
                     </v-card-text>
                 </v-card>
             </div>`
