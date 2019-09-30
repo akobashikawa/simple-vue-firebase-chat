@@ -12,8 +12,10 @@ const Login = Vue.component('login', {
                             label="Por favor ingresa tu nombre..."
                             outlined
                         ></v-text-field>
-                        <v-btn color="primary">Ingresar al chat</v-btn>
                     </v-card-text>
+                    <v-card-actions>
+                        <v-btn color="primary">Ingresar al chat</v-btn>
+                    </v-card-actions>
                 </v-card>
             </div>`
 });
