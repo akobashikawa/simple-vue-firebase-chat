@@ -2,12 +2,15 @@
 <html>
 
 <head>
-    <title>Simple Chat</title>
+    <meta charset="UTF-8">
+    <title>Firebase Chat</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
     <style>
         [v-cloak]>* {
             display: none
@@ -26,10 +29,10 @@
                 <v-list-item>
                     <v-list-item-content>
                         <v-list-item-title class="title">
-                            Simple Chat
+                            Firebase Chat
                         </v-list-item-title>
                         <v-list-item-subtitle>
-                            username
+                            Menu
                         </v-list-item-subtitle>
                     </v-list-item-content>
                 </v-list-item>
@@ -37,17 +40,17 @@
                 <v-divider></v-divider>
 
                 <v-list dense nav>
-                    <v-list-item>
+                    <v-list-item router to="/">
                         <v-list-item-icon>
-                            <v-icon>mdi-view-dashboard</v-icon>
+                            <v-icon>home</v-icon>
                         </v-list-item-icon>
                         <v-list-item-content>
                             <v-list-item-title to="/">Home</v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
-                    <v-list-item>
+                    <v-list-item router to="/about">
                         <v-list-item-icon>
-                            <v-icon>mdi-view-dashboard</v-icon>
+                            <v-icon>info</v-icon>
                         </v-list-item-icon>
                         <v-list-item-content>
                             <v-list-item-title to="/about">About</v-list-item-title>
@@ -57,9 +60,9 @@
 
             </v-navigation-drawer>
 
-            <v-app-bar app color="deep-purple accent-4" dark>
+            <v-app-bar app color="light-blue darken-1" dark>
                 <v-app-bar-nav-icon @click.stop="drawer=!drawer"></v-app-bar-nav-icon>
-                <v-toolbar-title>Simple Chat</v-toolbar-title>
+                <v-toolbar-title>Firebase Chat</v-toolbar-title>
             </v-app-bar>
 
             <v-content>
@@ -69,10 +72,7 @@
             </v-content>
 
             <v-footer app>
-                <p>
-                    <router-link to="/">Home</router-link>
-                    <router-link to="/about">About</router-link>
-                </p>
+                201909 - @rulokoba - Firebase Chat
             </v-footer>
         </v-app>
     </div>
@@ -90,7 +90,14 @@
 
                 };
             },
-            template: `<div>Home</div>`
+            template: `<div>
+                <v-card>
+                    <v-card-title>Home</v-card-title>
+                    <v-card-text>
+                    <p>{{ new Date() }}</p>
+                    </v-card-text>
+                </v-card>
+            </div>`
         });
 
         var About = Vue.component('about', {
@@ -99,7 +106,16 @@
 
                 };
             },
-            template: `<div>About</div>`
+            template: `<div>
+                <v-card>
+                    <v-card-title>About</v-card-title>
+                    <v-card-text>
+                    <p>
+                        Siguiendo el tutorial <a href="https://www.youtube.com/watch?v=lcYn0tgUvHE&t=17s" target="_blank">Building A Real-Time Chat Application With Vue.js and Firebase</a>
+                    </p>
+                    </v-card-text>
+                </v-card>
+            </div>`
         });
 
         var router = new VueRouter({
