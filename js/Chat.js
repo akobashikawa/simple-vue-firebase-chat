@@ -6,7 +6,10 @@ const Chat = Vue.component('chat', {
     },
     template: `<div>
                 <v-card>
-                    <v-card-title>Chat</v-card-title>
+                    <v-card-title>
+                        <v-icon large class="mx-3">chat_bubble_outline</v-icon>
+                        My username
+                    </v-card-title>
                     <v-card-text>
                         <v-list-item>
                             <v-list-item-content>
