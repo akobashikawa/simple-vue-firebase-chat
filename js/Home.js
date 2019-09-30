@@ -1,4 +1,5 @@
-const Home = Vue.component('home', {
+const Home = {
+    name: 'home',
     data() {
         return {
 
@@ -12,6 +13,6 @@ const Home = Vue.component('home', {
                     </v-card-text>
                 </v-card>
             </div>`
-});
+};
 
 export default Home;

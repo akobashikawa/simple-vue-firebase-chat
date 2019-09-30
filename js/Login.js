@@ -1,4 +1,5 @@
-const Login = Vue.component('login', {
+const Login = {
+    name: 'login',
     data() {
         return {
             errorText: null,
@@ -35,6 +36,6 @@ const Login = Vue.component('login', {
                     </v-card-actions>
                 </v-card>
             </div>`
-});
+};
 
 export default Login;

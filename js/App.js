@@ -1,4 +1,5 @@
-const App = Vue.component('app', {
+const App = {
+    name: 'app',
     data() {
         return {
             drawer: false,
@@ -74,6 +75,6 @@ const App = Vue.component('app', {
             201909 - @rulokoba - Firebase Chat
         </v-footer>
     </v-app>`
-});
+};
 
 export default App;

@@ -1,4 +1,5 @@
-const Chat = Vue.component('chat', {
+const Chat = {
+    name: 'chat',
     data() {
         return {
 
@@ -32,6 +33,6 @@ const Chat = Vue.component('chat', {
                     </v-card-text>
                 </v-card>
             </div>`
-});
+};
 
 export default Chat;
