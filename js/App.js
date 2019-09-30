@@ -58,7 +58,10 @@ const App = Vue.component('app', {
 
         <v-app-bar app color="light-blue darken-1" dark>
             <v-app-bar-nav-icon @click.stop="drawer=!drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title>Firebase Chat</v-toolbar-title>
+            <v-toolbar-title>
+                Firebase Chat
+                <v-icon large class="mx-3">forum</v-icon>
+            </v-toolbar-title>
         </v-app-bar>
 
         <v-content>
