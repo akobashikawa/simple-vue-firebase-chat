@@ -1,4 +1,5 @@
 import Home from './Home.js';
+import Login from './Login.js';
 import About from './About.js';
 
 const router = new VueRouter({
@@ -8,6 +9,11 @@ const router = new VueRouter({
             path: '/',
             name: 'home',
             component: Home
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: Login
         },
         {
             path: '/about',

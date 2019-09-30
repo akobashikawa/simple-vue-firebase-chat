@@ -25,7 +25,15 @@ const App = Vue.component('app', {
                         <v-icon>home</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
-                        <v-list-item-title to="/">Home</v-list-item-title>
+                        <v-list-item-title>Home</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item router to="/login">
+                    <v-list-item-icon>
+                        <v-icon>person</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-content>
+                        <v-list-item-title>Login</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
                 <v-list-item router to="/about">
@@ -33,7 +41,7 @@ const App = Vue.component('app', {
                         <v-icon>info</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
-                        <v-list-item-title to="/about">About</v-list-item-title>
+                        <v-list-item-title>About</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
