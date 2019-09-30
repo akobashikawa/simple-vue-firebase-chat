@@ -38,7 +38,7 @@ const App = Vue.component('app', {
                 </v-list-item>
                 <v-list-item router to="/chat">
                     <v-list-item-icon>
-                        <v-icon>people</v-icon>
+                        <v-icon>chat</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>Chat</v-list-item-title>
