@@ -2,8 +2,9 @@ const Login = {
     name: 'login',
     data() {
         return {
-            errorText: null,
-            name: null,
+            errorText: '',
+            errorDialog: false,
+            name: '',
         };
     },
     methods: {
@@ -11,6 +12,7 @@ const Login = {
             if (this.name) {
                 this.$router.push({ name: 'chat', params: { name: this.name } });
             } else {
+                this.errorDialog = true;
                 this.errorText = 'Por favor ingresa tu nombre primero';
             }
         }
@@ -32,12 +34,12 @@ const Login = {
                     </v-card-actions>
                 </v-card>
 
-                <v-dialog v-model="errorText">
-                    <v-card>
+                <v-dialog v-model="errorDialog">
+                    <v-card class="p-0 pt-4">
                         <v-card-text>{{ errorText }}</v-card-text>
 
                         <v-card-actions>
-                            <v-btn text color="error" @click="errorText = null">Cerrar</v-btn>
+                            <v-btn text color="error" @click="errorDialog = null">Cerrar</v-btn>
                         </v-card-actions>
                     </v-card>                
                 </v-dialog>
